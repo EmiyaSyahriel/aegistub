@@ -28,7 +28,7 @@ aegisub = {
 ---@param desc string
 ---@param prio number
 ---@param func_proc fun(subs:subtitle_t, conf:table)
----@param func_config? fun(subs:subtitle_t, prev_conf:table):table
+---@param func_config? fun(subs:subtitle_t, prev_conf:table):dlg_control_t[]
 function aegisub.register_filter(name, desc, prio, func_proc, func_config) end
 
 ---Register new macro
