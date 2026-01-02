@@ -50,3 +50,10 @@ By the way, this is my first time actually working with full Lua, so please bear
 This stub is under MIT License
 
 Aegisub is under GPL-compatible BSD-style license
+
+## Links
+- Aegisub official website : [Aegisub](https://www.aegisub.org)
+- Aegisub upstream GitHub repository : [TypesettingTools/Aegisub](https://github.com/TypesettingTools/Aegisub) - Main Aegisub repo
+- @arch1t3cht 's fork of Aegisub GitHub repository : [arch1t3cht/Aegisub](https://github.com/arch1t3cht/Aegisub) - I currently used this fork for my works because it got some nice additional features, maybe I will switch over once the migration is completed
+- Aegisub documentation main page : [Main Page](https://aegisub.org/docs/latest/main_page/)
+- Aegisub Lua reference main page : [Lua Reference](https://aegisub.org/docs/latest/automation/lua/)
