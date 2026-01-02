@@ -7,7 +7,7 @@ License of Aegisub: GPL-compatible BSD-style license
 License of this stub: MIT
 ]]
 
--- include LuaLS for types, progress and dialogs types
+-- include LuaLS annotations for types, debug, progress and dialogs types
 require "typedef"
 require "dialog"
 require "progress"
