@@ -1,9 +1,10 @@
----@diagnostic disable-next-line: lowercase-global
-clipboard = {}
+local clipboard_stub = {}
 
 ---@return string|nil # Clipboard content, nil if error
-function clipboard.get() return "" end
+clipboard_stub.get = function() return "" end
 
 ---@param new_text string source string
 ---@return boolean # is operation success?
-function clipboard.set(new_text) return false end
+clipboard_stub.set = function(new_text) return false end
+
+return clipboard_stub

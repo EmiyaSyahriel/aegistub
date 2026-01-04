@@ -1,12 +1,13 @@
 ---Aegisub progress reporting API
----@diagnostic disable-next-line: lowercase-global
-aegisub_progress = {}
+local aegisub_progress_stub = {}
 
 ---@param percent number
-function aegisub_progress.set(percent) end
+aegisub_progress_stub.set = function(percent) end
 ---@param msg string
-function aegisub_progress.task(msg, ...) end
+aegisub_progress_stub.task = function(msg, ...) end
 ---@param title string
-function aegisub_progress.title(title, ...) end
+aegisub_progress_stub.title = function(title, ...) end
 ---@return boolean
-function aegisub_progress.is_cancelled() return true end
+aegisub_progress_stub.is_cancelled = function() return true end
+
+return aegisub_progress_stub

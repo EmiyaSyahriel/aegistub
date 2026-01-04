@@ -19,7 +19,7 @@ match_table.__index = match_table
 local re_inst = {}
 
 ---@diagnostic disable-next-line: lowercase-global
-re = {
+local re_stub = {
     ICASE = 0,
     NOSUB = 1,
     NEWLINE_ALT = 2,
@@ -32,7 +32,7 @@ re = {
 ---@param pattern string source pattern
 ---@param ... integer flags
 ---@return re_instance_t # compiled pattern
-function re.compile(pattern, ...) return {} end
+re_stub.compile = function(pattern, ...) return {} end
 
 ---split by the pattern
 ---@param str string
@@ -40,7 +40,7 @@ function re.compile(pattern, ...) return {} end
 ---@param skip_empty? boolean
 ---@param max_splits? integer Maximum string being splitted, the rest would be kept as is
 ---@return string[]
-function re.split(str, pattern, skip_empty, max_splits) return {string} end
+re_stub.split = function(str, pattern, skip_empty, max_splits) return {string} end
 
 ---split by the pattern
 ---@param str string
@@ -48,31 +48,31 @@ function re.split(str, pattern, skip_empty, max_splits) return {string} end
 ---@param skip_empty? boolean
 ---@param max_splits? integer Maximum string being splitted, the rest would be kept as is
 ---@return string[] iterator
-function re.gsplit(str, pattern, skip_empty, max_splits) return {string} end
+re_stub.gsplit = function(str, pattern, skip_empty, max_splits) return {string} end
 
 ---find all non-overlapping substrings
 ---@param str string
 ---@param pattern string
 ---@return match_table_t|nil matches
-function re.find(str, pattern) return {} end
+re_stub.find = function(str, pattern) return {} end
 
 ---find all non-overlapping substrings
 ---@param str string
 ---@param pattern string
 ---@return match_occurence_t[]|nil iterator
-function re.gfind(str, pattern) return {} end
+re_stub.gfind = function(str, pattern) return {} end
 
 ---match the pattern to the string
 ---@param str string
 ---@param pattern string
 ---@return match_table_t|nil match table
-function re.match(str, pattern) return {} end
+re_stub.match = function(str, pattern) return {} end
 
 ---match the pattern to the string
 ---@param str string
 ---@param pattern string
 ---@return match_occurence_t[]|nil iterator
-function re.gmatch(str, pattern) return {} end
+re_stub.gmatch = function(str, pattern) return {} end
 
 ---replace pattern in the string with the replacement string
 ---@param str string
@@ -80,4 +80,6 @@ function re.gmatch(str, pattern) return {} end
 ---@param pattern string
 ---@param max_count? integer how many strings to be replaced at one time
 ---@return string replaced_string, integer how_many_replaced
-function re.sub(str, replace, pattern, max_count) return str,0 end
+re_stub.sub = function(str, replace, pattern, max_count) return str,0 end
+
+return re_stub

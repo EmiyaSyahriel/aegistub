@@ -20,15 +20,14 @@ local dlgctrl = {}
 ---@alias dlgbutton_t "ok"| "yes" | "save" | "apply" | "close" | "no" | "cancel" | "help" | "context_help"
 
 ---Aegisub dialog API
----@diagnostic disable-next-line: lowercase-global
-aegisub_dialog = {}
+local aegisub_dialog_stub = {}
 
 ---@param config dlg_control_t[] dialog definition table
 ---@param buttons string[] list of buttons
 ---@param button_ids table id of buttons, corresponds to platform button ID
 ---@return dlgbutton_t|boolean which button clicked
 ---@return table dialog result table - contain values from the controls defined on config accessible via their .name
-function aegisub_dialog.display(config, buttons, button_ids) return "ok",{} end
+aegisub_dialog_stub.display = function(config, buttons, button_ids) return "ok",{} end
 
 ---@param title string
 ---@param default_file string
@@ -37,7 +36,7 @@ function aegisub_dialog.display(config, buttons, button_ids) return "ok",{} end
 ---@param allow_multiple boolean default = false
 ---@param must_exists boolean = default = true
 ---@return nil|string|string[] canceled = nil; allow_multiple is false = file path string; allow_multiple is true = string[] of selected file paths
-function aegisub_dialog.open(title, default_file, default_dir, wildcards, allow_multiple, must_exists) return default_file end
+aegisub_dialog_stub.open = function(title, default_file, default_dir, wildcards, allow_multiple, must_exists) return default_file end
 
 ---@param title string
 ---@param default_file string
@@ -45,4 +44,6 @@ function aegisub_dialog.open(title, default_file, default_dir, wildcards, allow_
 ---@param wildcards string What to show on file type dropdown, format is like this : `All files (.)|.|XYZ files (.xyz)|.xyz`
 ---@param dont_prompt_for_overwrite boolean default = false
 ---@return nil|string file path or nil if cancelled
-function aegisub_dialog.save(title, default_file, default_dir, wildcards, dont_prompt_for_overwrite) return default_file end
+aegisub_dialog_stub.save = function(title, default_file, default_dir, wildcards, dont_prompt_for_overwrite) return default_file end
+
+return aegisub_dialog_stub
